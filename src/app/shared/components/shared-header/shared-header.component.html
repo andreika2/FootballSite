@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <img class="logo" src="assets/ball.png">
+    <button *ngFor="let button of pageButtonList"
+            (click)="clickHeaderFunction(button); headerTitle = button"
+            mat-button>
+      <h3> {{ button }} </h3>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<header class="header-container">
+  <h1>{{ headerTitle }}</h1>
+</header>

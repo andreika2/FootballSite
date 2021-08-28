@@ -1,0 +1,53 @@
+@mixin item-center-position {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+::ng-deep mat-form-field {
+  margin-top: 1em;
+}
+
+.grid-button {
+  width: 11em;
+  button {
+    margin-left: 0.5em;
+  }
+}
+
+.loader-container {
+  height: 67vh;
+  @include item-center-position();
+}
+
+.empty-container {
+  height: 72vh;
+  @include item-center-position();
+  div {
+    padding: 2.5em;
+    background: rgb(0 0 0 / 4%);
+    border-radius: 2em;
+    color: #263bae;
+    font-size: 1.15em;
+  }
+}
+
+table {
+  height: 67vh;
+  tr.mat-header-row {
+    height: 0vh;
+  }
+  td {
+    height: 3vh;
+  }
+}
+
+mat-paginator {
+  height: 5vh;
+}

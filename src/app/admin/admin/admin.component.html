@@ -1,0 +1,9 @@
+<app-shared-header
+  [headerTitle] = "headerTitle"
+  [pageButtonList]="headerOptionsList"
+  [clickHeaderFunction]="toolBarButtonClicked.bind(this)"
+></app-shared-header>
+
+<div class="content-container">
+  <router-outlet></router-outlet>
+</div>

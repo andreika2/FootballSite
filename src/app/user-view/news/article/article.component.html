@@ -1,0 +1,24 @@
+<div class="article-container">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{articleData.title}}</mat-card-title>
+      <mat-card-subtitle>{{articleData.publishDate | date : 'd.0M.y'}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image
+         src="assets/{{articleData.imageLink}}">
+    <mat-card-content>
+      <editor
+        [initialValue]="articleData.content"
+        [apiKey]="tinyMCEKey"
+        [inline]="true"
+        [disabled]="true">
+      </editor>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="openArticle(false, 1)">
+        <mat-icon>arrow_left</mat-icon>
+        К странице новостей
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

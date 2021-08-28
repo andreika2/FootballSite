@@ -1,0 +1,45 @@
+@use '../../../../node_modules/@angular/material/index' as mat;
+
+.example-card {
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  width: 60%;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+.hidden-container {
+  display: none !important;
+}
+
+.card-container {
+  background-image: url(https://images.unsplash.com/photo-1544914379-806667cd9489?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .example-card {
+    @include mat.elevation(8);
+  }
+}
+
+.next-button {
+  margin: 1em;
+}
+
+.empty-container {
+  background-image: url(https://images.unsplash.com/photo-1544914379-806667cd9489?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80);
+  height: 82vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  div {
+    background-color: #3f51b5;
+    padding: 3em;
+    border-radius: 2em;
+    color: white;
+  }
+}

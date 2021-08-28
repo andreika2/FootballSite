@@ -1,0 +1,62 @@
+<mat-card class="add-news">
+  <mat-card-title>
+      Добавить новость
+  </mat-card-title>
+
+  <mat-card-content>
+    <mat-stepper
+      orientation="vertical"
+      [linear]="true"
+      [formGroup]="addNewsForm">
+      <mat-step>
+        <ng-template matStepLabel>Добавте заголовок</ng-template>
+        <mat-form-field appearance="outline">
+            <mat-label>Заголовок</mat-label>
+            <input matInput [formControlName]="'title'">
+        </mat-form-field>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>Добавте текст для карточки новостей</ng-template>
+        <mat-form-field appearance="outline">
+          <mat-label>Текст для карточки новостей</mat-label>
+          <input matInput [formControlName]="'textPreview'">
+        </mat-form-field>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>Загрузите фото для новости</ng-template>
+        <div class="uploader-wrapper">
+          <ngx-awesome-uploader
+            [enableCropper] = "false"
+            [fileMaxCount] = "1"
+            [fileMaxSize]="10"
+            [captions] = "captions"
+            [enableAutoUpload] = "false"
+            [accept]="availableFileType"
+            (fileRemoved)="fileRemoved()"
+            (fileAdded)="fileAdded($event)">
+          </ngx-awesome-uploader>
+        </div>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Введите текст новости</ng-template>
+        <editor
+          [formControlName]="'content'"
+          [initialValue]="initialValue"
+          [apiKey]="tinyMCEKey"
+          [outputFormat]="'html'"
+          [init]="tinyMCEConfig">
+        </editor>
+      </mat-step>
+    </mat-stepper>
+  </mat-card-content>
+
+  <div class="action-buttons">
+    <button mat-raised-button
+            color="primary"
+            [disabled]="isAddNewFormValid()"
+            (click)="addNews()">Добавить новость</button>
+    <button mat-raised-button (click)="goToListNews()">Назад</button>
+  </div>
+</mat-card>

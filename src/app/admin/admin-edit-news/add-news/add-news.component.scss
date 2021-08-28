@@ -1,0 +1,35 @@
+:host {
+  display: block;
+}
+.uploader-wrapper {
+  ::ng-deep ngx-awesome-uploader {
+    max-width: none;
+    div {
+      file-preview-container {
+        file-preview-item {
+          max-width: none;
+        }
+      }
+    }
+  }
+}
+
+.action-buttons {
+  button:last-child {
+    margin-left: 0.5em;
+  }
+}
+
+.add-news {
+  margin: 1em 4em 0 4em;
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+::ng-deep editor {
+  .tox-statusbar__branding,
+  .tox-statusbar__resize-handle {
+    display: none !important;
+  }
+}

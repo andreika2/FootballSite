@@ -1,0 +1,32 @@
+@use '../../../../../node_modules/@angular/material/index' as mat;
+
+::ng-deep .mat-toolbar {
+  @include mat.elevation(4);
+  z-index: 998;
+  position: fixed;
+}
+::ng-deep .mat-tab-group {
+  margin-top:55px !important;
+}
+
+::ng-deep .mat-tab-header {
+  z-index: 999;
+  width:100vw;
+  position: fixed !important;
+}
+::ng-deep .mat-tab-body-wrapper {
+  position: relative !important;
+  margin-top:55px;
+}
+
+.header-container {
+  display: flex;
+  color: white;
+  background: #3f51b5;
+  padding-left: 20px;
+  padding-top: 4em;
+}
+
+.logo {
+  width: 3.5em;
+}
